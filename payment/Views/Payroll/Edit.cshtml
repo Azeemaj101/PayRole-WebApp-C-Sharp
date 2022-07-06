@@ -1,0 +1,78 @@
+﻿@using payment.Models
+@model Employees
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container-fluid inner_div d-flex justify-content-center align-items-center flex-column">
+    <div class="p-5 inner-box-edit">
+    <div class="fs-2 fw-bold text-center">
+        Enter your Employee Data
+    </div>
+    <form class=" mt-4" method="post" autocomplete="off">
+        
+      <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input type="text" class="form-control" maxlength="50" asp-for="Name" id="Name" placeholder="UserName"/>
+        <span asp-validation-for="Name" class="text-danger text-start"></span>  
+    </div>
+      <div class="mb-3">
+        <label asp-for="CNIC" class="form-label"></label>
+        <input type="text" class="form-control" id="DisplayOrder" asp-for="CNIC" placeholder="Password"/>
+        <span asp-validation-for="CNIC" class="text-danger text-start"></span>    
+    </div>
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input type="text" class="form-control" id="DisplayOrder" asp-for="Age" placeholder="Password"/>
+        <span asp-validation-for="Age" class="text-danger text-start"></span>    
+    </div>
+    <div class="mb-3">
+        <label asp-for="Gender" class="form-label"></label>
+            <select id="SelectG" asp-for="Gender" class="form-select">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+            <span asp-validation-for="Gender" class="text-danger text-start"></span>   
+    </div>
+    <div class="mb-3">
+        <label asp-for="Category" class="form-label"></label>
+        <input type="text" disabled class="form-control" id="DisplayOrder" asp-for="Category" placeholder="Password"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Pay" class="form-label"></label>
+        <input type="text" class="form-control" id="DisplayOrder" asp-for="Pay" placeholder="Password"/>
+        <span asp-validation-for="Pay" class="text-danger text-start"></span>    
+    </div>
+    @if(@ViewBag.check==1)
+    {
+        <div class="mb-3">
+        <label class="form-label">Monthly Attendance</label>
+        <input type="text" class="form-control" id="DisplayOrder" asp-for="ManagerID" placeholder="Password"/>
+        <span asp-validation-for="ManagerID" class="text-danger text-start"></span>    
+        </div>
+    }
+    else{
+        <div class="mb-3">
+        <label class="form-label">Attendance</label>
+        <input type="text" disabled class="form-control" id="DisplayOrder" value="0" placeholder="Password"/>
+        </div>
+    }   <input type="hidden" asp-for=Id value="@ViewBag.editID"/>
+        <input type="hidden" asp-for=AttendanceID/>
+        <input type="hidden" asp-for=JSD/>
+        <input type="hidden" asp-for=Category/>
+            
+      <button type="submit" class="btn btn-primary container">EDIT</button>
+
+    </form>
+    </div>
+    <div class="text-center mt-4">
+    <a class="btn btn-outline-danger rounded-pill" asp-action="ManagerPage" asp-controller="Payroll"><i class="bi bi-arrow-bar-left"></i>&nbsp; Back</a>
+    </div>
+</div>
+
+@section scripts{
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}
+

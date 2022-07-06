@@ -1,0 +1,74 @@
+﻿*{
+    padding:0%;
+    margin:0%;
+}
+
+.inner_div {
+    background-image: url("../icon.svg");
+    /* The image used */
+    background-color: #e6e6e6;
+    padding:80px;
+    /* Used if the image is unavailable */
+    /*height: 520px;*/
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+}
+
+.inner-box {
+    height: 350px;
+    width: 420px;
+    border: 2px solid rgb(23, 156, 177);
+    border-top-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    box-shadow: 2px 2px 25px rgb(23, 156, 177);
+    /*overflow:scroll;*/
+}
+
+a[href] {
+    text-decoration: none;
+}
+.inner-box:hover {
+    box-shadow:inset 2px 2px 10px rgb(23, 156, 177);
+    transition: 1s;
+    transform: scale(1.04); 
+}
+
+.inner-box-edit {
+    border: 2px solid rgb(23, 156, 177);
+    border-top-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    box-shadow: 2px 2px 25px rgb(23, 156, 177);
+    /*overflow:scroll;*/
+}
+.inner-box-edit:hover {
+    box-shadow:inset 2px 2px 10px rgb(23, 156, 177);
+    transition: 1s;
+    transform: scale(1.04); 
+}
+
+.top-box {
+    border-bottom: 3px solid rgb(23, 156, 177);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.dot-css {
+    text-shadow: -2px -2px 10px #1CE815;
+}
+ion-icon{
+    color:white;
+}
+ion-icon:hover {
+    color: rgb(49, 210, 242);
+    position: relative;
+    top: -2px;
+}
+
+.tabs1 {
+    background: rgb(251, 232, 63);
+    background: radial-gradient(circle, rgba(251, 232, 63, 0.43040966386554624) 0%, rgba(219, 252, 70, 0.427608543417367) 100%);
+}

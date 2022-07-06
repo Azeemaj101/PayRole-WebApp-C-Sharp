@@ -1,0 +1,35 @@
+﻿@using payment.Models;
+@model Login;
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<div class="container-fluid inner_div pb-5 d-flex justify-content-center align-items-center flex-column">
+    <div class="p-4 inner-box">
+    <div class="fs-2 mt-2 fw-bold text-center">
+        Manager LOGIN
+    </div>
+    <form class="text-center mt-4" method="post" autocomplete="off">
+      <div class="mb-3">
+        <input type="text" class="form-control" maxlength="50" asp-for="username" id="Name" placeholder="UserName"/>
+        <span asp-validation-for="username" class="text-danger text-start"></span>  
+    </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" id="DisplayOrder" asp-for="password" placeholder="Password"/>
+        <span asp-validation-for="password" class="text-danger text-start"></span>    
+    </div>
+      <button type="submit" class="btn btn-primary container">LOGIN</button>
+
+    </form>
+    </div>
+    <div class="text-center mt-3">
+    <a class="btn btn-outline-danger rounded-pill" asp-action="Index" asp-controller="Home"><i class="bi bi-arrow-bar-left"></i>&nbsp; Back</a>
+    </div>
+</div>
+
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}

@@ -1,0 +1,230 @@
+﻿@*@using MultipleModelInOneView;*@
+@using payment.Models
+@model Employees;
+@*@model Attendance;*@
+@{
+    ViewData["Title"] = $"Welcome - {@ViewBag.Name}";
+}
+
+
+<!-- Modal 1-->
+<div class="modal fade" id="cat1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-light" style="background-color:rgb(23, 156, 177,0.7)">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ADD Employee's</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" autocomplete="off">
+          <div class="mb-3"> 
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" type="text" class="form-control" placeholder="Name" id="name">
+            <span asp-validation-for="Name" class="text-danger text-start"></span>  
+              
+        </div>
+          <div class="mb-3">
+            <label asp-for="CNIC" class="form-label"></label>
+            <input asp-for="CNIC" type="number" class="form-control" placeholder="CNIC" id="cnic">
+            <span asp-validation-for="CNIC" class="text-danger text-start"></span>  
+              
+        </div>
+        <div class="mb-3">
+          <label asp-for="Category" class="form-label"></label>
+          <select id="Select" asp-for="Category" onchange="fun()" class="form-select">
+            <option value="1">Monthly Pay</option>
+            <option value="2">Daily Pay</option>
+            <option value="3">Hourly Pay</option>
+          </select>
+            <span asp-validation-for="Category" class="text-danger text-start"></span>  
+        </div>
+          <div class="mb-3">
+            <label asp-for="Gender" class="form-label"></label>
+            <select id="SelectG" asp-for="Gender" class="form-select">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+            <span asp-validation-for="Gender" class="text-danger text-start"></span>  
+              
+        </div>
+          <div class="mb-3">
+            <label asp-for="Age" class="form-label"></label>
+            <input asp-for="Age" type="text" class="form-control" placeholder="Age" id="age">
+            <span asp-validation-for="Age" class="text-danger text-start"></span>  
+              
+        </div>
+          <div class="mb-3">
+            <label id="payl" class="form-label">Monthly Pay</label>
+            <input asp-for="Pay" min="2000" type="number" class="form-control" placeholder="Monthly Pay" id="Pay">
+            <span asp-validation-for="Pay" class="text-danger text-start"></span>  
+              
+        </div>
+          <div class="mb-3">
+            <label class="form-label">Monthly Attendance</label>
+            <input type="number" asp-for="ManagerID" class="form-control" placeholder="Monthly Attendance" id="attendance">
+            <span asp-validation-for="ManagerID" class="text-danger text-start"></span>  
+              
+        </div>
+          
+        
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger rounded-pill" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success rounded-pill">Submit</button>
+      </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="mb-5">
+    <div class="text-center fs-2 fw-bold top-box mb-3">
+        <span>
+            Manager:  @ViewBag.Name
+            <span class="text-success fs-6">
+                <span class="fs-1 fw-bold text-end dot-css ps-2">.</span> ONLINE
+            </span>
+        </span>
+    </div>
+    <div class="container-fluid mt-2 mb-2 ">
+        <div class="row ps-2 pe-2">
+            <div class="col-6 text-start text-dark fs-2 fw-bold">Employee's Records:</div>
+            <div class="col-6 text-end"> 
+                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#cat1">Create Employee's</button>
+                </div>
+        </div>
+    </div>
+    <div class="table-responsive pe-2 ps-2">
+        @if (ViewBag.cat1 != null)
+        {
+            <table id="myTable" class="table table-success table-striped table-hover align-middle" style="font-size:13px">
+                <thead class="text-center">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">CNIC</th>
+              <th scope="col">Category</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Hourly/Daily/Monthly Pay</th>
+              <th scope="col">Age</th>
+              <th scope="col">Job Start Date</th>
+              <th scope="col">Monthly Attendance</th>
+              <th scope="col">Per Holiday Fine</th>
+              <th scope="col">Final Pay</th>
+              <th scope="col">Actions</th>
+            </tr>
+
+          </thead>
+          <tbody class="text-center">
+              @{int i = 0;}
+                        @foreach(var item in ViewBag.cat1)
+            {
+                            <tr>
+                                <th scope="row">
+                                                @{++i;} @i</th>
+                                        <td>@item.eName</td>
+                              <td>@item.eCNIC</td>
+                              @if(@item.eCategory == 1)
+                              {
+                                <td>Monthly</td>
+                            }
+                            else if(@item.eCategory == 2)
+                            {
+                                <td>Daily</td>
+                            }
+                            else
+                            {
+                                <td>Hourly</td>
+                            }
+                            <td>@item.eGender</td>
+                              <td>@item.ePay -/RS</td>
+                              <td>@item.eAge</td>
+                              <td>@item.eStart_Job</td>
+                              @if(@item.aCount != 0)
+                              {
+                                <td>@item.aCount</td>
+                            }
+                            else
+                            {
+                                <td>x</td>
+                            }
+                            @if(@item.aCount != 0)
+                              {
+                                <td>700 -/RS</td>
+                            }
+                            else
+                            {
+                                <td>x</td>
+                            }
+                            @if(@item.eCategory == 1)
+                              {
+                                <td>@item.ePayment -/RS</td>
+                            }
+                            else
+                            {
+                                <td>x</td>
+                            }
+                            @if(@item.eCategory == 1)
+                              {
+                                <td><a asp-action="Edit" style="font-size:12px" asp-controller="Payroll" class="btn btn-info btn-sm rounded-pill" asp-route-id="@item.eID,@item.aID"><i class="bi bi-pencil-square"></i> Edit &nbsp;</a>
+                          <a asp-action="Delete" style="font-size:12px" class="btn btn-danger btn-sm rounded-pill" asp-controller="Payroll" asp-route-id="@item.eID,@item.aID"><i class="bi bi-trash3"></i> Delete</a></td>
+                            }
+                            else
+                            {
+                <td><a asp-action="Edit" style="font-size:12px" asp-controller="Payroll" class="btn btn-info btn-sm rounded-pill" asp-route-id="@item.eID"><i class="bi bi-pencil-square"></i> Edit &nbsp;</a>
+                <a asp-action="Delete" style="font-size:12px" class="btn btn-danger btn-sm rounded-pill" asp-controller="Payroll" asp-route-id="@item.eID"><i class="bi bi-trash3"></i> Delete</a></td>
+                            }
+                              
+                            </tr>
+                    }
+                
+          </tbody>
+        </table>
+        }
+        else
+        {
+            <div class="bg-danger text-center fs-2 fw-bold">Empty</div>
+        }
+    </div>
+</div>
+@section scripts{
+
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}
+
+<script>
+    function fun() {
+      var x = document.getElementById("Select").value;
+      var y = document.getElementById("attendance");
+      var z = document.getElementById("payl");
+      var z1 = document.getElementById("Pay");
+      if(x != 1)
+      {
+          y.value=null;
+          y.setAttribute('placeholder','Disabled');
+          y.setAttribute('disabled','');
+      }
+      else{
+          y.setAttribute('placeholder','Monthly Attendance');
+          y.removeAttribute('disabled', '');
+      }
+      if(x == 1)
+      {
+          z.innerText = "Monthly Pay";
+          z1.setAttribute('placeholder','Monthly Pay');
+      }
+      else if(x == 2)
+      {
+          z.innerText = "Daily Pay";
+          z1.setAttribute('placeholder','Daily Pay');
+      }
+      else{
+          z.innerText = "Hourly Pay";
+          z1.setAttribute('placeholder','Hourly Pay');
+      }
+    }
+  </script>

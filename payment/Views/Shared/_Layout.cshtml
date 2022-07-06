@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - payment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/payment.styles.css" asp-append-version="true" />
+    <link rel="icon" href="https://toppng.com/uploads/preview/bitcoin-png-bitcoin-logo-transparent-background-11562933997uxok6gcqjp.png" type="image/x-icon">
+    
+</head>
+<body>
+    <header class="bg-light">
+            <div class="d-flex justify-content-end bg-light">
+                <span class="me-2 top_text">
+                    <ion-icon class="icon text-primary" name="call"></ion-icon>+92 324 4064060
+                </span>
+                <span class="me-5 top_text">
+                    <ion-icon class="icon text-primary" name="mail"></ion-icon> Azeemaj101@gmail.com
+                </span>
+            </div>
+            <div>
+                <div class="d-inline bg-light">
+                    <a href="/" class="ps-2">
+                        <img src="~/2.png" class="logo" alt="">
+                    </a>
+                </div>
+                <div class="d-inline-block float-end head_bar">
+                    <span class="d-flex justify-content-end align-items-center header_btn">
+                        <a asp-area="" asp-controller="Payroll" asp-action="Index" id="login" class="btn btn-primary btn-sm">LOGIN</a>
+                        
+                        <button
+                            class="btn btn-light btn-sm ms-2 border border-dark border-1 dropdown-toggle"
+                            type="button"
+                            id="Account"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                             @ViewBag.Name @*Muhammad Azeem*@
+                        </button>
+                        <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                                <img src="https://www.seekpng.com/png/detail/72-729756_how-to-add-a-new-user-to-your.png" class="rounded-circle" style="height:150px; width:170px" />
+                            </li>
+                            <li>
+                                <hr />
+                                <form method="post" id="logout1">
+                                 <button type="submit" class="btn btn-danger btn-sm container-fluid">Logout</button>
+                                 </form>
+
+                            </li>
+                        </ul>
+                        
+                    </span>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+                <div class="container">
+                    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" asp-action="Index" asp-controller="Home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="login1" aria-current="page" asp-controller="Payroll" asp-action="Index">LOGIN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://azeemaj101.herokuapp.com/">ABOUT US</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="mailto:azeemaj101@gmail.com">CONTACT US</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input
+                                class="form-control me-2"
+                                type="search"
+                                placeholder="Search..."
+                                aria-label="Search"
+                            >
+                            <ion-icon name="search" class="search text-primary"></ion-icon>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    <div>
+        <partial class="bg-danger" name="_Notification" />
+            @RenderBody()
+    </div>
+
+    <footer class="text-light pt-2 bg-dark">
+            <div class="container d-flex pb-2 justify-content-start flex-wrap">
+                <div class="d-inline-flex flex-column me-4 mb-3" style="width: 160px;">
+                    <span class="fw-blod fs-3 mb-2">Quick Links</span>
+                    <a asp-controller="Home" class="text-light" asp-action="Index">
+                    <span class="pt-1">Home</span>
+                    </a>
+                    <hr id="login3">
+                    <span asp-controller="Payroll" asp-action="Index" id="login2">LOGIN</span>
+                    <hr>
+                    <a href="https://azeemaj101.herokuapp.com/" class="text-light" target="_blank"><span>ABOUT US</span></a>
+                    <hr>
+                    <a href="mailto:azeemaj101@gmail.com" class="text-light" target="_blank"><span>CONTACT US</span></a>
+                    
+                </div>
+                <div class="d-inline-flex flex-column me-4">
+                    <span class="fs-3 mb-2 fw-bold">
+                        Contact Us
+                    </span>
+                    <span>
+                        <ion-icon name="home" style="position: relative; top: 2px;"></ion-icon> Lorem ipsum, dolor, 1234.
+                    </span>
+                    <span>
+                        <ion-icon name="call" style="position: relative; top: 2px;"></ion-icon> +92 324 4064060
+                    </span>
+                    <span>
+                        <ion-icon name="mail" style="position: relative; top: 2px;"></ion-icon> Azeemaj101@gmail.com
+                    </span>
+                    <span class="fs-3 mb-2 mt-4 fw-bold">
+                        Our Social Network
+                    </span>
+                    <span class="fs-3">
+                        <a href="https://twitter.com/Azeemaj101" class="icon101" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="https://github.com/Azeemaj101" class="icon101" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+                        <a href="https://www.linkedin.com/in/azeemaj101/" class="icon101" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    </span>
+                </div>
+                <div class="d-inline-flex flex-column me-5">
+                    <span class="fs-3 mb-2 fw-bold">
+                        Most Recent News
+                    </span>
+                    <div class="mb-2 me-1">
+                        <span>
+                            <img
+                                src="https://i.pinimg.com/736x/42/af/24/42af242140bf484fbaeb3510c85b9170--exterior.jpg"
+                                alt=""
+                                style="width: 100px; height: 80px;"
+                                class="rounded-1"
+                            >
+                        </span>
+                        <div class="d-inline-flex flex-column">
+                            <span>Lorem ipsum dolor amet.</span>
+                            <span>
+                                <span class="text-primary">Area:</span>
+                                1633ft...
+                            </span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-2 me-1">
+                        <span>
+                            <img
+                                src="https://i.pinimg.com/736x/42/af/24/42af242140bf484fbaeb3510c85b9170--exterior.jpg"
+                                alt=""
+                                style="width: 100px; height: 80px;"
+                                class="rounded-1"
+                            >
+                        </span>
+                        <div class="d-inline-flex flex-column">
+                            <span>Lorem ipsum dolor amet.</span>
+                            <span>
+                                <span class="text-primary">Area:</span>
+                                1633ft...
+                            </span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-2 me-1">
+                        <span>
+                            <img
+                                src="https://i.pinimg.com/736x/42/af/24/42af242140bf484fbaeb3510c85b9170--exterior.jpg"
+                                alt=""
+                                style="width: 100px; height: 80px;"
+                                class="rounded-1"
+                            >
+                        </span>
+                        <div class="d-inline-flex flex-column">
+                            <span>Lorem ipsum dolor amet.</span>
+                            <span>
+                                <span class="text-primary">Area:</span>
+                                1633ft...
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-flex flex-column ms-2">
+                    <span class="fs-3 mb-2 fw-bold">
+                        MAP
+                    </span>
+                    @*<form class="mt-2 text-center">
+                        <div class="mb-3">
+                            <input type="text" placeholder="Name" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                class="form-control"
+                                id="exampleInputEmail1"
+                                aria-describedby="emailHelp"
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control text_area" placeholder="Message" id="floatingTextarea2"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary container-fluid">SEND</button>
+                    </form>*@
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435518.6817831567!2d74.05419103087152!3d31.483220875105893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1656284609616!5m2!1sen!2s" width="320" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div style="background-color: black;">
+                <div class="container pt-2 pb-2 top_text">
+                    <span>©️ CopyRight 2022</span>
+                    <a href="http://azeemaj101.herokuapp.com" target="_blank" rel="noopener noreferrer">
+                        <span class="float-end text-light">Design By: Azeemaj101.herokuapp.com</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <link href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable({
+                "createdRow": function(row, data, dataIndex) {
+                    // if( data[2] ==  `someVal`){
+                    $(row).addClass('tabs1');
+                    // }
+                },
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        title: 'Employees_PayRoll',
+                        "className": 'btn btn-outline-success rounded btn-sm ms-3 fs-6',
+                        exportOptions: {
+                            columns: [ 0, 1, 2, 3,4,5,6,7,8,9,10]
+                        }
+                    }, {
+                        extend: 'pdfHtml5',
+                        title: 'Employees_PayRoll',
+                        "className": 'btn btn-outline-danger rounded btn-sm ms-3 fs-6',
+                        exportOptions: {
+                            columns: [ 0, 1, 2, 3,4,5,6,7,8,9,10]
+                        }
+                        
+                    },
+                    {
+                        extend: 'print',
+                        title: 'Employees_PayRoll',
+                        "className": 'btn btn-outline-primary rounded ms-3 btn-sm fs-6',
+                        exportOptions: {
+                            columns: [ 0, 1, 2, 3,4,5,6,7,8,9,10]
+                        }
+                    },
+                    {
+                        extend: 'copy',
+                        title: 'Employees_PayRoll',
+                        "className": 'btn btn-outline-secondary rounded ms-3 btn-sm fs-6',
+                        exportOptions: {
+                            columns: [ 0, 1, 2, 3,4,5,6,7,8,9,10]
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+
+    <script>
+        console.log(window.location.href.split("/")[3]=="Payroll");
+        if (window.location.href.split("/")[3] == "Payroll") {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("login1").style.display = "none";
+            document.getElementById("login2").style.display = "none";
+            document.getElementById("login3").style.display = "none";
+        }
+        if (window.location.href.split("/")[4] != "ManagerPage") {
+            //document.getElementById("logout").style.display = "none";
+            document.getElementById("Account").style.display = "none";
+        }
+    </script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
