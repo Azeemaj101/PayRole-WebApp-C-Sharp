@@ -19,35 +19,38 @@
 }
 
 .inner-box {
-    height: 350px;
+    /*height: 350px;*/
     width: 420px;
-    border: 2px solid rgb(23, 156, 177);
-    border-top-left-radius: 90px;
-    border-bottom-right-radius: 90px;
-    box-shadow: 2px 2px 25px rgb(23, 156, 177);
+    /*border: 2px solid rgb(23, 156, 177);*/
+    border-radius: 20px;
+    box-shadow: 2px 2px 25px rgb(23, 156, 177),inset -2px -2px 25px rgb(23, 156, 177,0.2);
+
+    /*box-shadow: inset -2px -2px 15px rgb(242, 174, 59), inset 2px 2px 15px rgb(0, 0, 0), -2px -2px 15px rgb(242, 174, 59), 2px 2px 15px rgb(0, 0, 0);*/
     /*overflow:scroll;*/
 }
+
 
 a[href] {
     text-decoration: none;
 }
 .inner-box:hover {
-    box-shadow:inset 2px 2px 10px rgb(23, 156, 177);
+    box-shadow: inset 2px 2px 10px rgb(23, 156, 177),inset -2px -2px 25px rgb(23, 156, 177,0.2);
     transition: 1s;
-    transform: scale(1.04); 
+    transform: scale(1.02);
 }
 
 .inner-box-edit {
-    border: 2px solid rgb(23, 156, 177);
-    border-top-left-radius: 90px;
-    border-bottom-right-radius: 90px;
+    /*border: 2px solid rgb(23, 156, 177);*/
+    border-radius: 40px;
+    width:500px;
+    /*border-bottom-right-radius: 40px;*/
     box-shadow: 2px 2px 25px rgb(23, 156, 177);
     /*overflow:scroll;*/
 }
 .inner-box-edit:hover {
     box-shadow:inset 2px 2px 10px rgb(23, 156, 177);
     transition: 1s;
-    transform: scale(1.04); 
+    transform: scale(1.02); 
 }
 
 .top-box {
@@ -71,4 +74,50 @@ ion-icon:hover {
 .tabs1 {
     background: rgb(251, 232, 63);
     background: radial-gradient(circle, rgba(251, 232, 63, 0.43040966386554624) 0%, rgba(219, 252, 70, 0.427608543417367) 100%);
+}
+
+.logo_login{
+    width:160px;
+    height:90px;
+    margin-bottom:10px;
+}
+
+.input_field {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(23, 156, 177);
+    outline: transparent;
+    padding-left: 3px;
+}
+
+.input_field:focus {
+    border-bottom: 2px solid rgb(242, 174, 59);
+}
+
+.btn-submit {
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid rgb(23, 156, 177);
+    color:rgb(23, 156, 177);
+    font-weight:bold;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.btn-submit:hover {
+    background: rgb(23, 156, 177);
+    color:white;
+}
+
+.box_stats {
+    display: inline-block;
+    width: 265px;
+    background-color: rgb(23, 156, 177);
+    padding:10px;
+    border-radius: 12px;
+}
+.box_stats:hover {
+    position:relative;
+    top:-2px;
+    box-shadow: 2px 2px 15px black;
 }

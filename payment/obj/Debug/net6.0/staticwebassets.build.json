@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "de1VOP0Mh3Qg2WO0KbGGjx6sxE2iwhuucUeg164ESMw=",
+  "Hash": "Xf8TLEMcK4SN/rJsZ53XoxA7d4IXguKWB40c5/vb86s=",
   "Source": "payment",
   "BasePath": "_content/payment",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HC\\source\\repos\\paymentApp\\payment\\wwwroot\\3.png",
+      "SourceId": "payment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HC\\source\\repos\\paymentApp\\payment\\wwwroot\\",
+      "BasePath": "_content/payment",
+      "RelativePath": "3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\3.png"
+    },
+    {
+      "Identity": "C:\\Users\\HC\\source\\repos\\paymentApp\\payment\\wwwroot\\4.png",
+      "SourceId": "payment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HC\\source\\repos\\paymentApp\\payment\\wwwroot\\",
+      "BasePath": "_content/payment",
+      "RelativePath": "4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\4.png"
     },
     {
       "Identity": "C:\\Users\\HC\\source\\repos\\paymentApp\\payment\\wwwroot\\css\\site.css",

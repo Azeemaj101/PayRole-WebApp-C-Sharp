@@ -80,6 +80,7 @@
 
 
 <div class="mb-5">
+    
     <div class="text-center fs-2 fw-bold top-box mb-3">
         <span>
             Manager:  @ViewBag.Name
@@ -87,6 +88,64 @@
                 <span class="fs-1 fw-bold text-end dot-css ps-2">.</span> ONLINE
             </span>
         </span>
+    </div>
+    @{
+        int a = 0; int b = 0; int c = 0; int d=0; 
+    }
+    @foreach(var item in ViewBag.cat1)
+            {
+        a = a + 1;
+        @if(@item.eCategory == 1)
+        {
+            b = b + 1;
+        }
+        else if(@item.eCategory == 2)
+        {
+            c = c +1;
+        }
+        else if(@item.eCategory == 3)
+        {
+            d = d + 1;
+        }
+
+    }
+    <div class="d-flex justify-content-center align-items-center pb-5 mt-2">
+        <div class="box_stats me-3">
+            <div class="row g1">
+                <span class="col-9">
+                    <span class="fs-1 text-center d-block"><i class="bi bi-person-square"></i></span>
+                    <span class="fs-5 text-center d-block fw-bold">Employee's Count</span>
+                </span>
+                <span class="col-3 d-flex justify-content-center align-items-center fs-1 fw-bold">@a</span>
+            </div>
+        </div>
+        <div class="box_stats me-3">
+            <div class="row g1">
+                <span class="col-9">
+                    <span class="fs-1 text-center d-block"><i class="bi bi-award"></i></span>
+                    <span class="fs-5 text-center d-block fw-bold">Monthly Employee's</span>
+                </span>
+                <span class="col-3 d-flex justify-content-center align-items-center fs-1 fw-bold">@b</span>
+            </div>
+        </div>
+        <div class="box_stats me-3">
+            <div class="row g1">
+                <span class="col-9">
+                    <span class="fs-1 text-center d-block"><i class="bi bi-hourglass-split"></i></span>
+                    <span class="fs-5 text-center d-block fw-bold">Daily Employee's</span>
+                </span>
+                <span class="col-3 d-flex justify-content-center align-items-center fs-1 fw-bold">@c</span>
+            </div>
+        </div>
+        <div class="box_stats me-2">
+            <div class="row g1">
+                <span class="col-9">
+                    <span class="fs-1 text-center d-block"><i class="bi bi-clock-history"></i></span>
+                    <span class="fs-5 text-center d-block fw-bold">Hourly Employee's</span>
+                </span>
+                <span class="col-3 d-flex justify-content-center align-items-center fs-1 fw-bold">@d</span>
+            </div>
+        </div>
     </div>
     <div class="container-fluid mt-2 mb-2 ">
         <div class="row ps-2 pe-2">
@@ -96,10 +155,10 @@
                 </div>
         </div>
     </div>
-    <div class="table-responsive pe-2 ps-2">
+    <div class="table-responsive pe-1 ps-1">
         @if (ViewBag.cat1 != null)
         {
-            <table id="myTable" class="table table-success table-striped table-hover align-middle" style="font-size:13px">
+            <table id="myTable" class="table table-success table-striped table-hover align-middle" style="font-size:12px">
                 <thead class="text-center">
             <tr>
               <th scope="col">ID</th>

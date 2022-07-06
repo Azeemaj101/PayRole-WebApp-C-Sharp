@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/payment.styles.css" asp-append-version="true" />
-    <link rel="icon" href="https://toppng.com/uploads/preview/bitcoin-png-bitcoin-logo-transparent-background-11562933997uxok6gcqjp.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima&family=Raleway:ital,wght@0,300;0,600;1,200&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="~/4.png" type="image/x-icon">
     
 </head>
 <body>
@@ -25,12 +28,12 @@
             <div>
                 <div class="d-inline bg-light">
                     <a href="/" class="ps-2">
-                        <img src="~/2.png" class="logo" alt="">
+                        <img src="~/5.png" class="logo" alt="">
                     </a>
                 </div>
                 <div class="d-inline-block float-end head_bar">
                     <span class="d-flex justify-content-end align-items-center header_btn">
-                        <a asp-area="" asp-controller="Payroll" asp-action="Index" id="login" class="btn btn-primary btn-sm">LOGIN</a>
+                        <a asp-area="" asp-controller="Payroll" asp-action="Index" id="login" class="btn-submit pe-2 ps-2 fw-bold">ADMIN-LOGIN</a>
                         
                         <button
                             class="btn btn-light btn-sm ms-2 border border-dark border-1 dropdown-toggle"
@@ -57,7 +60,7 @@
                     </span>
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(23, 156, 177)">
                 <div class="container">
                     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
                     <button
@@ -74,16 +77,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" asp-action="Index" asp-controller="Home">Home</a>
+                                <a class="nav-link text-light" aria-current="page" asp-action="Index" asp-controller="Home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="login1" aria-current="page" asp-controller="Payroll" asp-action="Index">LOGIN</a>
+                                <a class="nav-link text-light" id="login1" aria-current="page" asp-controller="Payroll" asp-action="Index">LOGIN</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://azeemaj101.herokuapp.com/">ABOUT US</a>
+                                <a class="nav-link text-light" href="https://azeemaj101.herokuapp.com/">ABOUT US</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="mailto:azeemaj101@gmail.com">CONTACT US</a>
+                                <a class="nav-link text-light" href="mailto:azeemaj101@gmail.com">CONTACT US</a>
                             </li>
                         </ul>
                         <form class="d-flex">
@@ -104,7 +107,7 @@
             @RenderBody()
     </div>
 
-    <footer class="text-light pt-2 bg-dark">
+    <footer class="text-light pt-2" style="background-color: rgb(23, 156, 177)">
             <div class="container d-flex pb-2 justify-content-start flex-wrap">
                 <div class="d-inline-flex flex-column me-4 mb-3" style="width: 160px;">
                     <span class="fw-blod fs-3 mb-2">Quick Links</span>
@@ -119,7 +122,7 @@
                     <a href="mailto:azeemaj101@gmail.com" class="text-light" target="_blank"><span>CONTACT US</span></a>
                     
                 </div>
-                <div class="d-inline-flex flex-column me-4">
+                <div class="d-inline-flex flex-column me-3">
                     <span class="fs-3 mb-2 fw-bold">
                         Contact Us
                     </span>
@@ -157,7 +160,7 @@
                         <div class="d-inline-flex flex-column">
                             <span>Lorem ipsum dolor amet.</span>
                             <span>
-                                <span class="text-primary">Area:</span>
+                                <span class="text-dark">Area:</span>
                                 1633ft...
                             </span>
                         </div>
@@ -175,7 +178,7 @@
                         <div class="d-inline-flex flex-column">
                             <span>Lorem ipsum dolor amet.</span>
                             <span>
-                                <span class="text-primary">Area:</span>
+                                <span class="text-dark">Area:</span>
                                 1633ft...
                             </span>
                         </div>
@@ -193,7 +196,7 @@
                         <div class="d-inline-flex flex-column">
                             <span>Lorem ipsum dolor amet.</span>
                             <span>
-                                <span class="text-primary">Area:</span>
+                                <span class="text-dark">Area:</span>
                                 1633ft...
                             </span>
                         </div>
